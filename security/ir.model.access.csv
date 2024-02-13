@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+iti_managers_patient_access,iti_managers_patient_access,model_hms_patient,managers2_group,1,1,1,1
+iti_managers2_patient_access,iti_managers2_patient_access,model_log,managers2_group,1,1,1,1
+iti_managers_department_access,iti_managers_department_access,model_department,managers2_group,1,1,1,1
+iti_managers_doctors_access,iti_managers_doctors_access,model_doctors,managers2_group,1,1,1,1
+iti_employee_patient_access,iti_employee_patient_access,model_hms_patient,empolyess2_group,1,1,1,0
+iti_employee2_patient_access,iti_employee2_patient_access,model_log,empolyess2_group,1,1,1,0
+iti_employee_doctors_access,iti_employee_patient_access,model_doctors,empolyess2_group,0,0,0,0
+iti_employee_department_access,iti_employee_department_access,model_department,empolyess2_group,1,0,0,0
+
+
+
+
+

@@ -1,0 +1,103 @@
+<odoo>
+     <data>
+        <record id='patient_action' model='ir.actions.act_window'>
+           <field name='name'>Patients</field>
+          <field name='res_model'>hms_patient</field>
+          </record>
+           
+            <record id="view_hms_patient_tree" model="ir.ui.view">
+            <field name="name">Hms Tree View</field>
+            <field name="model">hms_patient</field>
+            <field name="arch" type="xml">
+                <tree >
+                  
+                     <field name="firstname"/>
+                      <field name="lastname"/>
+                       
+                        <field name="image"/>
+                        
+                        
+                          
+                  
+                </tree>
+            </field>
+        </record>
+            <record id="view_hms_patient_form" model="ir.ui.view">
+            <field name="name">Hms Form View</field>
+            <field name="model">hms_patient</field>
+            <field name="arch" type="xml">
+                <form>
+                <header>
+                    <field name="state" widget='statusbar' nolabel="1" options="{'clickable': '1'}"/>
+                    <button name="change_state" string='change_level' type="object"/>
+                    </header>
+                  <sheet>
+                  
+                  
+                     <group string="general information">
+                      <field name="firstname"/>
+                      <field name="lastname"/>
+                       
+                        <field name="image"/>
+                        <field name="age"/>
+                        <field name="blood_type"/>
+                        <field name="birth_date"/>
+                        <field name="email"/>
+                        
+                        <!-- <notebook>
+                         <page string="Log History" attrs="{'invisible': [('age', '&lt;', 50)]}">
+                            <field name="log_history_ids" widget="one2many_list">
+                                <tree>
+                                    <field name="created_by"/>
+                                    <field name="date"/>
+                                    <field name="description"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook> -->
+                         
+                      </group>  
+                      <notebook>
+                         <page  string="Extra information" name ="Extra informations">
+                           <group>
+                             
+                             <field name="pcr"/>
+                              
+                             <field name="cr_ratio"/>
+                            </group>
+                          </page>
+                          <page  string="Department information" name ="Department informations">
+                           <group>
+                             <field name="department_id"  domain ="[('is_opened','=','True')]"/>
+                             <field name="department_capacity"/>
+                             
+                            </group>
+                          </page>
+                          <page  string="Doctor information" name ="Doctor informations">
+                              <group>
+                             <field name="doctor_id"  attrs="{'readonly': [('department_id', '=', False)]}"/>
+                             
+                             
+                            </group>
+                           
+                          </page>
+                      <page string="Log History" attrs="{'invisible': [('age', '&lt;', 50)]}">
+                            <field name="log_history_ids" widget="one2many_list">
+                                <tree>
+                                    <field name="create_uid"/>
+                                    <field name="create_date"/>
+                                    <field name="description"/>
+                                </tree>
+                            </field>
+                        </page>
+                      </notebook> 
+                   </sheet>
+                </form>
+            </field>
+        </record>
+        
+         <menuitem name='Hms' id='hms_main_menu'/>
+        <menuitem name='Patients' id='patient_menu' parent='hms_main_menu' action="patient_action"/>
+      </data>
+
+</odoo>

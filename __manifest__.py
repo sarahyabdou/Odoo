@@ -1,0 +1,14 @@
+{
+    'name':'hms',
+    'author':'hms',
+     'depends':['base'],
+    'data':['views/hms_patient_views.xml',
+             'views/department_views.xml',
+              'views/doctors_views.xml',
+               'views/res_partner_views.xml',
+               'views/res_groups.xml',
+               'security/ir.model.access.csv',
+               'reports/hms_patient_template.xml',
+                'reports/reports.xml'
+                ]
+}

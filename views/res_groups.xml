@@ -1,0 +1,16 @@
+<odoo>
+<data>
+
+<record id='iti_group' model='ir.module.category'>
+<field name="name">ITI </field>
+</record>
+<record id='managers2_group' model='res.groups'>
+<field name="name">managers</field>
+<field  name="category_id" ref='iti_group'/>
+</record>
+<record id='empolyess2_group' model='res.groups'>
+<field name="name">employee</field>
+<field  name="category_id" ref='iti_group'/>
+</record>
+</data>
+</odoo>

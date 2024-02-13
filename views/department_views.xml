@@ -1,0 +1,57 @@
+<odoo>
+     <data>
+        <record id='department_action' model='ir.actions.act_window'>
+           <field name='name'>Department</field>
+          <field name='res_model'>department</field>
+        </record>     
+         <record id="view_department_tree" model="ir.ui.view">
+            <field name="name">Department Tree View</field>
+            <field name="model">department</field>
+            <field name="arch" type="xml">
+                <tree >
+                  
+                     <field name="department_name"/>
+                      <field name="capacity"/>
+                       <field name="is_opened"/>
+                       
+                          
+                  
+                </tree>
+            </field>
+        </record>
+            <record id="view_department_form" model="ir.ui.view">
+            <field name="name">Department Form View</field>
+            <field name="model">department</field>
+            <field name="arch" type="xml">
+                <form>
+                  <sheet>
+                  
+                     <group string="general information">
+                       <field name="department_name"/>
+                      <field name="capacity"/>
+                       <field name="is_opened"/>
+                    
+                      </group>  
+                      
+                        <group string="patients information">
+                         <field name="patient_id">
+                           <tree>
+                             <field name="firstname"/>
+                             <field name = "lastname"/>
+                           </tree>
+                          </field>
+                      </group>  
+                    
+
+                        
+                         
+                      
+                   </sheet>
+                </form>
+            </field>
+        </record>
+         
+        <menuitem name='Department' id='department_menu' parent='hms_main_menu' action="department_action"/>
+    </data>
+
+</odoo>
